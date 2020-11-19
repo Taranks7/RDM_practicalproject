@@ -1,0 +1,58 @@
+import numpy as np
+import matplotlib 
+import matplotlib.pyplot as plt 
+import scipy
+import scipy.spatial
+import scipy.spatial.distance as sd
+
+import json 
+
+fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json'
+
+with open(fpath) as fhandle:
+   ...:    data = json.load(fhandle)
+import numpy as np
+import matplotlib 
+import matplotlib.pyplot as plt 
+import scipy
+import scipy.spatial
+import scipy.spatial.distance as sd
+
+import json 
+
+fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json'
+
+with open(fpath) as fhandle:
+    
+    data = json.load(fhandle)
+data['trials']
+data['trials'][0]
+T0 = data['trials'][0]
+T0D = sipy.spatial.distance.pdist(T0, method = 'euclidean')
+T0D = scipy.spatial.distance.pdist(T0, method = 'euclidean')
+T0A = np.array(T0)
+T0D = scipy.spatial.distance.pdist(T0D, method = 'euclidean')
+T0A = np.array(T0)
+T0D = scipy.spatial.distance.pdist(T0A, method = 'euclidean')
+data['trials'][0]
+T0 = data['trials'][0]
+dir[T0]
+dir(T0)
+type(T0)
+T0.keys
+T0.keys()
+T0[min_evidence]
+T0['min_evidence']
+T0
+T0['positions']
+type(T0['positions'])
+T0['positions'][0]
+P0 = T0['positions'][0]
+P0.keys()
+P0('x')
+P0[x]
+P0(x)
+P0('x')
+P0['x']
+P0['y']
+history
