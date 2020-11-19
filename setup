@@ -1,0 +1,3 @@
+cd projects/AVIMA
+source venv/bin/activate
+ipython 
