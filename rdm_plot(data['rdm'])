@@ -1,0 +1,125 @@
+import numpy as np
+import matplotlib 
+import matplotlib.pyplot as plt 
+import scipy
+import scipy.spatial
+import scipy.spatial.distance as sd
+
+import json 
+
+fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json'
+
+with open(fpath) as fhandle:
+   ...:    data = json.load(fhandle)
+   
+data['stimuli']
+   
+data['rdm']
+rdm_array = np.array(data['rdm'])
+rdm_array.shape
+
+plt.plot(rdm_array.T)
+
+plt.show()
+
+from scipy.spatial.distance import squareform
+srdm = squareform(rdm_array)
+plt.plot(srdm)
+plt.imshow(srdm)
+plt.show()
+
+   
+
+-------------------------------------------------------------------------------
+
+
+sd.squareform(rdm_array)
+
+rdms = sd.squareform(rdm_array)
+
+
+
+
+------------------------------------------------------------------
+data['rdm']
+rdm_array = numpy.array(data['rdm'])
+...: 
+
+rdm_array.shape
+...: 
+
+scipy.spatial.distance.squareform(['rdm'])
+...:
+scipy.spatial.distance.squareform([1,1'rdm'])
+scipy.spatial.distance.squareform(1,1,['rdm'])
+scipy.spatial.distance.squareform(1,['rdm'])
+scipy.spatial.distance.squareform(1,['rdm'])
+rdms = scipypy.spatial.distance.squareform('rdm')
+rdms = scipy.spatial.distance.squareform('rdm')
+matplotlib.pyplot(rdms)
+matplotlib.pyplot(1,1, [rdms])
+matplotlib.pyplot.plot(rdms)
+rdms = scipypy.spatial.distance.squareform('rdm_array')
+rdms = scipy.spatial.distance.squareform('rdm_array')
+matplotlib.pyplot.plot(rdms)
+matplotlib.pyplot.plot['rdms']
+matplotlib.pyplot.plot[rdms]
+matplotlib.pyplot.plot(rdms)
+matplotlib.pyplot.plot([rdms])
+matplotlib.pyplot.plot([rdms])
+rdms = numpy.array(['rdm'])
+history
+rdm_array.shape
+rdms
+rdms.shape
+rdmm = np.asmatrix(rdm_array)
+rdmm = numpy.asmatrix(rdm_array)
+rdmm
+matplotlib/pyplot.plot(rdmm)
+matplotlib.pyplot.plot(rdmm)
+matplotlib.pyplot.plot(x, rdmm)
+matplotlib.pyplot.plot([rdmm)]
+matplotlib.pyplot.plot([rdmm])
+matplotlib.pyplot.plot(1, [rdmm])
+matplotlib.pyplot.plot(1, [rdmm])
+matplotlib.pyplot.plot(1, 1 ,[rdmm])
+matplotlib.pyplot.plot(1, 1 ,[rdm])
+matplotlib.pyplot.plot(1, 1 ,[rdm_array])
+matplotlib.pyplot.show()
+matplotlib.pyplot(rdmm)
+rdmm
+import matplotlib.pyplot as plt
+rdm_array
+plt.plot(rdm_array.T)
+plt.show()
+matplotlib.pyplot.show()
+
+rdm_array
+
+plt.plot(rdm_array.T)
+
+plt.show()
+import scipy.spatial.distance as sd
+sd.squareform(rdm_array)
+rdms = sd.squareform(rdm_array)
+plt.plot(rdms)
+plt.plot.show()
+from scipy.spatial.distance import squareform
+srdm = squareform(rdm_array)
+plt.plot(srdm)
+plt.plot.show()
+plt.plot.show(srdm)
+plt.imshow(srdm)
+plt.show()
+colorbar()
+plt.show.colorbar()
+img = plt.imshow(srdm)
+img
+colorbar(img)
+img = (plt.imshow(srdm)) colorbar()
+img.colorbar
+img.colorbar.show()
+plt.colorbar
+plt.colorbar(heatmap)
+plt.colorbar(cMap)
+history
