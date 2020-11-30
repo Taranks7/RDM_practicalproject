@@ -1,3 +1,6 @@
+cd projects/AVIMA
+source venv/bin/activate
+ipython 
 
 import numpy as np
 import matplotlib 
@@ -12,39 +15,41 @@ fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-h
 
 with open(fpath) as fhandle:
     data = json.load(fhandle)
+
 data['trials']
-data['trials'][0]
-T0 = data['trials'][0]
-T0D = sipy.spatial.distance.pdist(T0, method = 'euclidean')
-T0D = scipy.spatial.distance.pdist(T0, method = 'euclidean')
-T0A = np.array(T0)
-T0D = scipy.spatial.distance.pdist(T0D, method = 'euclidean')
-T0A = np.array(T0)
-T0D = scipy.spatial.distance.pdist(T0A, method = 'euclidean')
-data['trials'][0]
 T0 = data['trials'][0]
 dir(T0)
 type(T0)
 T0.keys()
 
-#The keys() method returns a view object. The view object contains the keys #of the dictionary, as a list. 
+#The keys() method returns a view object. The view object contains the keys of the dictionary, as a list. 
 
 T0['positions']
 type(T0['positions'])
-T0['positions'][0] 
 P0 = T0['positions'][0]
+P0.keys()
+
+TP0 = T0['positions']
+#first PO abs(x-y) value
+P0 = P0[0]
 P0.keys()
 x0 = P0['x']
 y0 = P0['y']
 abs(x0-y0)
 
+#assign x and y variables 
+for i in TP0:
+     X = (i['x'])
+     ax = abs(X)
+     
+for i in TP0:
+     Y = (i['y'])
+     ay = abs(Y)
+     
+#dissimilarity  
+for i in TP0:
+     answer = (i['x']-i['y'])
+     D = (abs(answer))
 
-
-T0P = T0['positions']
-    
-for i in positions:
-     print(i['x'])
-
-for i in positions:
-     answer = abs(i['x']-i['y'])
-     print (answer)
+#create zeros matrix
+arr = np.zeros([50, 50])
