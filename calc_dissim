@@ -53,3 +53,22 @@ for i in TP0:
 
 #create zeros matrix
 arr = np.zeros([50, 50])
+
+#create x matrix 
+arrx = np.zeros([50 , 1])
+for i in TP0:
+      X = (i['x'])
+      arrx = np.array(X)
+      print (arrx)
+#check
+type(arrx)
+
+#create y matrix 
+arry = np.zeros([50 , 1])
+for i in TP0:
+      Y = (i['y'])
+      arry = np.array(Y)
+      print (arry)
+#check
+type(arry)
+
