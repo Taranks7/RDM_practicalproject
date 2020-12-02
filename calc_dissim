@@ -60,21 +60,19 @@ for i in TP0:
 #create zeros matrix
 arr = np.zeros([50, 50])
 
-#create x matrix 
-arrx = np.zeros([50 , 1])
-for i in TP0:
-      X = (i['x'])
-      arrx = np.array(X)
-      print (arrx)
-#check
-type(arrx)
 
-#create y matrix 
+#create y array 
 arry = np.zeros([50 , 1])
 for i in TP0:
       Y = (i['y'])
-      arry = np.array(Y)
-      print (arry)
+      ay = abs(Y)
+      arry = np.array(ay)
 #check
 type(arry)
 
+#x array with 50 variables
+for i in TP0:
+    X = (i['x'])
+    ax = abs(X)
+    arrx = np.array(ax)
+type(arrx)
