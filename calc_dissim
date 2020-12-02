@@ -16,7 +16,14 @@ fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-h
 with open(fpath) as fhandle:
     data = json.load(fhandle)
 
-data['trials']
+DT = data['trials']
+
+print(len(data['trials']))
+#there are 133 trials 
+#the first will be T0 
+#the last will be T132
+#each trial has 50 items, each with x and y coordinates 
+
 T0 = data['trials'][0]
 dir(T0)
 type(T0)
@@ -24,14 +31,11 @@ T0.keys()
 
 #The keys() method returns a view object. The view object contains the keys of the dictionary, as a list. 
 
-T0['positions']
-type(T0['positions'])
-P0 = T0['positions'][0]
-P0.keys()
-
 TP0 = T0['positions']
+type(T0['positions'])
+
 #first PO abs(x-y) value
-P0 = P0[0]
+P0 = TP0[0]
 P0.keys()
 x0 = P0['x']
 y0 = P0['y']
@@ -46,6 +50,8 @@ for i in TP0:
      Y = (i['y'])
      ay = abs(Y)
      
+#there will be 50 x,y coordinates
+
 #dissimilarity  
 for i in TP0:
      answer = (i['x']-i['y'])
