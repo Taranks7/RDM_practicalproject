@@ -18,7 +18,7 @@ with open(fpath) as fhandle:
 
 DT = data['trials']
 
-print(len(data['trials']))
+print(len(DT))
 #there are 133 trials 
 #the first will be T0 
 #the last will be T132
