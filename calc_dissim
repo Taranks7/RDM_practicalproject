@@ -78,16 +78,21 @@ for i in TP0:
     lx.append(X)
 arrx = np.array(lx)
 
+#50x1
+arrx.reshape((50,1))
+arry.reshape((50,1))
+
+
 #dissimilarity
 arrz = abs(arrx - arry) 
+arrz.reshape((50,1))
 
-#loop through all data - not complete
-z = 0
- for i in DT:
-     z += i
-     Tz = data['trails'][z]
-     TPz = Tz['positions']
-     for i in TPz:
-         X = (i['x'])
-         ax= abs(X)
+#loop through 133 trials
+for i in range(len(DT)):
+    t[i] = DT[i]
+    
+#find TPi 
+for i in range(len(t[i])
+
+
 
