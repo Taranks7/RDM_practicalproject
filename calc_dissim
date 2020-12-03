@@ -76,3 +76,13 @@ for i in TP0:
     ax = abs(X)
     arrx = np.array(ax)
 type(arrx)
+
+z = 0
+ for i in DT:
+     z += i
+     Tz = data['trails'][z]
+     TPz = Tz['positions']
+     for i in TPz:
+         X = (i['x'])
+         ax= abs(X)
+
