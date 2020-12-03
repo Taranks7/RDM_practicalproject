@@ -62,21 +62,26 @@ arr = np.zeros([50, 50])
 
 
 #create y array 
-arry = np.zeros([50 , 1])
+ly = []
 for i in TP0:
-      Y = (i['y'])
-      ay = abs(Y)
-      arry = np.array(ay)
+    Y = (abs(i['y']))
+    ly.append(Y)
+arry = np.array(ly)
+
 #check
 type(arry)
 
 #x array with 50 variables
+lx = []
 for i in TP0:
-    X = (i['x'])
-    ax = abs(X)
-    arrx = np.array(ax)
-type(arrx)
+    X = (abs(i['x']))
+    lx.append(X)
+arrx = np.array(lx)
 
+#dissimilarity
+arrz = abs(arrx - arry) 
+
+#loop through all data - not complete
 z = 0
  for i in DT:
      z += i
