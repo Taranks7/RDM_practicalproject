@@ -88,11 +88,15 @@ arrz = abs(arrx - arry)
 arrz.reshape((50,1))
 
 #loop through 133 trials
+t = {}
 for i in range(len(DT)):
-    t[i] = DT[i]
+    t = data['trials'][i]
+
     
-#find TPi 
+#find TPi    - not finished -not 50 x,y coordinates for all trials? 
 for i in range(len(t[i])
 
 
+for i in (t[1]['positions']):
+     print(i['y'])
 
