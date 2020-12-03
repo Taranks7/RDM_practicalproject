@@ -87,16 +87,9 @@ arry.reshape((50,1))
 arrz = abs(arrx - arry) 
 arrz.reshape((50,1))
 
-#loop through 133 trials
+#loop through 133 trials  -dont need to, only first trial
 t = {}
 for i in range(len(DT)):
     t = data['trials'][i]
 
-    
-#find TPi    - not finished -not 50 x,y coordinates for all trials? 
-for i in range(len(t[i])
-
-
-for i in (t[1]['positions']):
-     print(i['y'])
 
