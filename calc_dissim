@@ -96,7 +96,7 @@ euc_dist = (calc_euc(arrx, arry))
 plt.plot((euc_dist.reshape(2500,).T))
 plt.show()
 
-#need to make euc_dist an array with (2500/2 - 25) points 
+#need to make euc_dist an array with (2500/2 - diagonal)  
 euc_dist = euc_dist + euc_dist.T - np.diag(np.diag(euc_dist))
 plt.plot(euc_dist)
 plt.imshow(euc_dist)
