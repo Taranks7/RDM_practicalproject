@@ -12,7 +12,7 @@ count=1 # count default
 
 for file in p.glob('**/*'):
     if file.endswith('.json'):
-        execfile('calc-dissim.py')
+        exec(open('calc-dissim.py').read())
         plt.savefig('img'+str(count)+'.png')
         count +=1
 
