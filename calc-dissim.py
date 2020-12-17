@@ -1,7 +1,3 @@
-cd projects/AVIMA
-source venv/bin/activate
-ipython 
-
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt 
@@ -85,26 +81,20 @@ arry.reshape((25,2))
 arrx = abs(arrx)
 arry = abs(arry)
 
-#dissimilarity?
-arrz = abs(arrx - arry) 
-
 #euclidean distance between arrx arry points 
 def calc_euc(arrx, arry):
     return np.array([[np.linalg.norm(i-j) for j in arry] for i in arrx])
 euc_dist = (calc_euc(arrx, arry))
-
 plt.plot((euc_dist.reshape(2500,).T))
-plt.show()
 
 #need to make euc_dist an array with (2500/2 - diagonal)  
 euc_dist = euc_dist + euc_dist.T - np.diag(np.diag(euc_dist))
-plt.plot(euc_dist)
-plt.imshow(euc_dist)
-plt.show()
+
+
+
+
 
 #loop through 133 trials  -dont need to, only first trial
-t = {}
-for i in range(len(DT)):
-    t = data['trials'][i]
-
-
+#t = {}
+#for i in range(len(DT)):
+    #t = data['trials'][i]
