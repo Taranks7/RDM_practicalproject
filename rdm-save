@@ -1,0 +1,9 @@
+#plt.plot(euc_dist)
+img = plt.imshow(euc_dist)
+#save figures 
+img_num = 1
+for _ in range(len(participants)):
+    plt.savefig('img'+str(img_num)+'.png')
+    img_num += 1
+
+plt.show()
