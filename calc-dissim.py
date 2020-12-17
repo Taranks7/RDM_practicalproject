@@ -89,9 +89,7 @@ plt.plot((euc_dist.reshape(2500,).T))
 
 #need to make euc_dist an array with (2500/2 - diagonal)  
 euc_dist = euc_dist + euc_dist.T - np.diag(np.diag(euc_dist))
-
-
-
+img = plt.imshow(euc_dist)
 
 
 #loop through 133 trials  -dont need to, only first trial
