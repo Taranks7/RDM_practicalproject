@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 import scipy
 import scipy.spatial
 import scipy.spatial.distance as sd
+import os
 
 import json 
 ```
