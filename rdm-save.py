@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+import matplotlib 
+import matplotlib.pyplot as plt 
 
 #starting path 
 fpath = './home/taran/projects/AVIMA' 
