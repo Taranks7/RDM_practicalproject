@@ -27,7 +27,7 @@ srdm = squareform(rdm_array)
 plt.plot(srdm)
 plt.imshow(srdm)
 plt.show()
--------------------------------------------------------------------------------
+
 #add axes and olourbar 
 #colorbar()
 #plt.show.colorbar()
