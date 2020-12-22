@@ -5,7 +5,7 @@
 
 ## Code and resources used: ## 
 
-**Setting up the environment **
+**Setting up the environment:**
 
 ```
 cd projects/AVIMA
