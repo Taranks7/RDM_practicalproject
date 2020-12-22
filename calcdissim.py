@@ -11,27 +11,29 @@ from pathlib import Path
 
 import json 
 #find file path (fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json')
-path = './projects/AVIMA' 
+path = '/home/taran/projects/AVIMA' 
 
-directory = os.fsencode(path)
+rootdir = path
 
-p = Path(path)
-for file in p.glob('**/*'):
-    if file.endswith('.json'):
-        print(os.path.join(root, filename))
+for subdir, dirs, files in os.walk(rootdir):
+    for file in files:
+        if file.endswith('.json'):
+            print(os.path.join(subdir, file))
 
-file_path = os.path.join(os.environ.get('HOME'), 'Meadows_avima-image-version1_v_v2_better-hound_2_tree.json')
+
+#directory = os.fsencode(path)
+
+#p = Path(path)
+#for file in p.glob('**/*'):
+    #if file.endswith('.json'):
+        #print(os.path.join(root, filename))
+
+#file_path = os.path.join(os.environ.get('HOME'), 'Meadows_avima-image-version1_v_v2_better-hound_2_tree.json')
         
         
-for file in p.glob('**/*'):
-    if file.endswith('.json'):
-        filename = x
-        
+#for file in p.glob('**/*'):
+    #if file.endswith('.json')
 
-        
-        
-
-fpath = fpath 
 
 with open(fpath) as fhandle:
     data = json.load(fhandle)
