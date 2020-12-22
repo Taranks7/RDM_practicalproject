@@ -4,8 +4,31 @@ import matplotlib.pyplot as plt
 import scipy
 import scipy.spatial
 import scipy.spatial.distance as sd
+import os
+import os.path 
+from pathlib import Path
+
 
 import json 
+#find file path (fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json')
+path = './home/taran/projects/AVIMA' 
+p = Path(fpath)
+for file in p.glob('**/*'):
+    if file.endswith('.json'):
+        print(os.path.join(root, filename))
+
+file_path = x
+
+file_path = os.path.join(os.environ.get('HOME'), 'Meadows_avima-image-version1_v_v2_better-hound_2_tree.json')
+        
+        
+for file in p.glob('**/*'):
+    if file.endswith('.json'):
+        filename = x
+        
+
+        
+        
 
 fpath = fpath 
 
