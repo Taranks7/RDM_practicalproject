@@ -12,6 +12,9 @@ from pathlib import Path
 import json 
 #find file path (fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json')
 path = './projects/AVIMA' 
+
+directory = os.fsencode(path)
+
 p = Path(path)
 for file in p.glob('**/*'):
     if file.endswith('.json'):
