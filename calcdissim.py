@@ -7,20 +7,26 @@ import scipy.spatial.distance as sd
 import os
 import os.path 
 from pathlib import Path
-
+from pprint import pprint
 
 import json 
 #find file path (fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json')
 path = '/home/taran/projects/AVIMA' 
 
 rootdir = path
-fpath= []
+files = []
 
 for subdir, dirs, files in os.walk(rootdir):
     for file in files:
         if file.startswith('Meadows'):
-            fpath = (os.path.join(subdir, file))
-
+            print(os.path.join(subdir, file))
+#prints all  5 json files we need 
+            
+for subdir, dirs, files in os.walk(rootdir):
+    for file in files:
+        if file.startswith('Meadows'):
+            files.append(os.path.join(subdir, file))
+            pprint(files)
 
 
 ----------------------------------------------------------------------------------------------------
