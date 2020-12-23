@@ -14,13 +14,16 @@ import json
 path = '/home/taran/projects/AVIMA' 
 
 rootdir = path
+fpath= []
 
 for subdir, dirs, files in os.walk(rootdir):
     for file in files:
-        if file.endswith('.json'):
-            print(os.path.join(subdir, file))
+        if file.startswith('Meadows'):
+            fpath = (os.path.join(subdir, file))
 
 
+
+----------------------------------------------------------------------------------------------------
 #directory = os.fsencode(path)
 
 #p = Path(path)
