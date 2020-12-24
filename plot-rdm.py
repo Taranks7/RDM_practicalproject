@@ -12,8 +12,13 @@ fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-h
 with open(fpath) as fhandle:
    ...:    data = json.load(fhandle)
    
+#inspect rdm stimuli labels 
 data['stimuli']
-   
+#create array containing all labels 
+rdm_names = np.array(data['stimuli'])
+
+
+#inspect rdm data   
 data['rdm']
 rdm_array = np.array(data['rdm'])
 rdm_array.shape
