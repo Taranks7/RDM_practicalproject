@@ -19,23 +19,14 @@ rdm_array = np.array(data['rdm'])
 rdm_array.shape
 
 plt.plot(rdm_array.T)
-
-plt.show()
+#plt.show()
 
 from scipy.spatial.distance import squareform
 srdm = squareform(rdm_array)
 plt.plot(srdm)
 plt.imshow(srdm)
+plt.colorbar(mappable = None, cax = None, ax = None)
 plt.show()
 
-#add axes and olourbar 
-#colorbar()
-#plt.show.colorbar()
-#img = plt.imshow(srdm)
-#colorbar(img)
-#img = (plt.imshow(srdm)) colorbar()
-#img.colorbar
-#img.colorbar.show()
-#plt.colorbar
-#plt.colorbar(heatmap)
-#plt.colorbar(cMap)
+
+
