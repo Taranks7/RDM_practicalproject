@@ -8,9 +8,34 @@ import scipy.spatial.distance as sd
 from scipy.spatial.distance import squareform
 import os
 import json 
+import pathlib
+from pathlib import Path
 
-#filepath 
-path = '/home/taran/projects/AVIMA' 
+
+def paths_files_from_args(paths_args, fn_match_test):
+     class oSet(OrderedDict):
+        def add(self, k):
+            self.__setitem__(k, None)
+
+        paths_files = oSet()
+
+        for test_path in paths_args:
+            test_path = Path(test_path).expanduser().resolve()
+    
+        if fn_match_test(test_path):
+                paths_files.add(test_path)
+                continue  # next test_path
+
+        # walk the directory structure
+        for path_dir_root, sub_directories, names_files in os.walk(test_path):
+            for filename in names_files:
+                if fn_match_test(filename):
+                    paths_files.add(pathlib.Path(path_dir_root, filename))
+            return list(paths_files)
+paths_files_from_args('/home/taran/projects/AVIMA', lambda x: x.endswith(".json")))
+    
+    
+    path = '/home/taran/projects/AVIMA' 
 rootdir = path
 filepath = []
 for subdir, dirs, files in os.walk(rootdir):
@@ -22,7 +47,9 @@ for i in enumerate(filepath):
 for f in fpath:
     with open(f) as fhandle:
         data= json.load(fhandle)
-
+    
+        
+        
 #with open(fpath) as fhandle:
     #data = json.load(fhandle)
    
@@ -70,6 +97,16 @@ plt.setp(ax.get_xticklabels(), rotation=90, ha="right",
 plt.plot(srdm)
 plt.imshow(srdm)
 plt.colorbar(mappable = None, cax = None, ax = None)
-
 #plt.show()
-plt.savefig(RDM)
+
+#save plot
+count=1 # count default
+
+fpath = './home/taran/projects/AVIMA' 
+p = Path(fpath)
+
+#loop through all files in AVIMA folder
+for file in p.glob('**/*'):
+    if file.endswith('.json'):
+        plt.savefig('img'+str(count)+'.png')
+        count +=1
