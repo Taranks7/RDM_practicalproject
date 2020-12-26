@@ -10,10 +10,10 @@ import json
 fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json'
 
 with open(fpath) as fhandle:
-   ...:    data = json.load(fhandle)
+    data = json.load(fhandle)
    
 #inspect rdm stimuli labels 
-data['stimuli']
+stim = data['stimuli']
 
 #contain all labels for y axis and x axis seperately  
 y_names = []
