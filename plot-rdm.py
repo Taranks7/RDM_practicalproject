@@ -15,21 +15,26 @@ with open(fpath) as fhandle:
 #inspect rdm stimuli labels 
 stim = data['stimuli']
 
+type(stim)
+type(stim[0])
+len(stim)
+#stim is a list of 50 dict elements 
+
 #contain all labels for y axis and x axis seperately  
 y_names = []
 for i in stim:
-   y_names = (i['name'])
+   y_names.append(i['name'])
    
 x_names = []
 for i in stim:
-   x_names = (i['name'])
+   x_names.append(i['name'])
 
 #inspect rdm data   
 data['rdm']
 rdm_array = np.array(data['rdm'])
 rdm_array.shape
 
-plt.plot(rdm_array.T)
+#plt.plot(rdm_array.T)
 #plt.show()
 
 from scipy.spatial.distance import squareform
@@ -57,6 +62,3 @@ for i in range(len(x_names)):
         text = ax.text(j, i, srdm[i, j])
 
 plt.show()
-
-
-
