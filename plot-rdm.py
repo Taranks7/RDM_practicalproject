@@ -1,3 +1,4 @@
+#import libraries
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt 
@@ -5,13 +6,25 @@ import scipy
 import scipy.spatial
 import scipy.spatial.distance as sd
 from scipy.spatial.distance import squareform
-
+import os
 import json 
 
-fpath = '/home/taran/projects/AVIMA/1/Meadows_avima-image-version1_v_v2_better-hound_2_tree.json'
+#filepath 
+path = '/home/taran/projects/AVIMA' 
+rootdir = path
+filepath = []
+for subdir, dirs, files in os.walk(rootdir):
+    for file in files:
+        if file.startswith('Meadows'):
+            filepath.append(os.path.join(subdir, file))
+for i in enumerate(filepath):
+    fpath = filepath
+for f in fpath:
+    with open(f) as fhandle:
+        data= json.load(fhandle)
 
-with open(fpath) as fhandle:
-    data = json.load(fhandle)
+#with open(fpath) as fhandle:
+    #data = json.load(fhandle)
    
 #inspect rdm stimuli labels 
 stim = data['stimuli']
@@ -58,4 +71,5 @@ plt.plot(srdm)
 plt.imshow(srdm)
 plt.colorbar(mappable = None, cax = None, ax = None)
 
-plt.show()
+#plt.show()
+plt.savefig(RDM)
