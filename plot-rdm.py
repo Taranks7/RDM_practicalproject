@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import scipy
 import scipy.spatial
 import scipy.spatial.distance as sd
+from scipy.spatial.distance import squareform
 
 import json 
 
@@ -37,11 +38,8 @@ rdm_array.shape
 #plt.plot(rdm_array.T)
 #plt.show()
 
-from scipy.spatial.distance import squareform
 srdm = squareform(rdm_array)
-plt.plot(srdm)
-plt.imshow(srdm)
-plt.colorbar(mappable = None, cax = None, ax = None)
+
 
 #label x and y axis on rdm 
 
@@ -54,11 +52,10 @@ ax.set_yticks(np.arange(len(y_names)))
 ax.set_xticklabels(x_names)
 ax.set_yticklabels(y_names)
 
-plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
+plt.setp(ax.get_xticklabels(), rotation=90, ha="right",
          rotation_mode="anchor")
-
-for i in range(len(x_names)):
-    for j in range(len(y_names)):
-        text = ax.text(j, i, srdm[i, j])
+plt.plot(srdm)
+plt.imshow(srdm)
+plt.colorbar(mappable = None, cax = None, ax = None)
 
 plt.show()
