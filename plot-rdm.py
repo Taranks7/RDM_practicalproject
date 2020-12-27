@@ -97,6 +97,7 @@ plt.setp(ax.get_xticklabels(), rotation=90, ha="right",
 plt.plot(srdm)
 plt.imshow(srdm)
 plt.colorbar(mappable = None, cax = None, ax = None)
+fig.subplots_adjust(bottom=0.23)
 #plt.show()
 
 #save plot
