@@ -1,5 +1,13 @@
+#import libraries
+import numpy as np
+import matplotlib 
+import matplotlib.pyplot as plt 
+import scipy
+import scipy.spatial
+import scipy.spatial.distance as sd
+from scipy.spatial.distance import squareform
 import os
-#from pathlib import Path
+import json 
 
 # define fpath 
 count=0 # count default
@@ -13,7 +21,8 @@ for subdir, dirs, files in os.walk(rootdir):
         if file.startswith('Meadows'):
             filepath.append(os.path.join(subdir, file))
             fpath = filepath[count]
-            exec(open('plot-rdm.py').read())
+            import plot-rdm
+            #exec(open('plot-rdm.py').read())
             count +=1
             
 #p = Path(path)
