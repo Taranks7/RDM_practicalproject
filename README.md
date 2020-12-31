@@ -6,7 +6,6 @@
 
 Figure 1. RDM for participant 1; 0 represents most similar pairs of stimuli and 0.05 represents least similar pairs. 
 ## Set up ## 
-- The data are presumed to be at ~/Projects/AVIMA/
 **Setting up the environment:**
 
 ```
@@ -16,4 +15,5 @@ cd projects/AVIMA
 source venv/bin/activate
 ipython 
 ```
+- The data are presumed to be at ~/Projects/AVIMA/
 - install dependencies: pip install -r requirements.txt
