@@ -46,7 +46,7 @@ def plot_rdm():
 #plt.show()
 
 #save plot
-    plt.savefig('rdm'+str(count)+'.png')
+    plt.savefig('rdm'+'.png')
 
 if __name__ == '__main__':
     plot_rdm()
