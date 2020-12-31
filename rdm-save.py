@@ -8,6 +8,7 @@ import scipy.spatial.distance as sd
 from scipy.spatial.distance import squareform
 import os
 import json 
+from subprocess import call 
 
 # define fpath 
 count=0 # count default
@@ -21,12 +22,5 @@ for subdir, dirs, files in os.walk(rootdir):
         if file.startswith('Meadows'):
             filepath.append(os.path.join(subdir, file))
             fpath = filepath[count]
-            import plot-rdm
-            #exec(open('plot-rdm.py').read())
-            count +=1
-            
-#p = Path(path)
-#for file in p.glob('**/*'):
-    #if file.startswith('Meadows'):
-        #fpath= filepath[count]
-        
+            call["python", "plotrdm.py"]
+            count +=1      
