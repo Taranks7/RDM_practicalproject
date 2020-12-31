@@ -8,7 +8,8 @@ import scipy.spatial.distance as sd
 from scipy.spatial.distance import squareform
 import os
 import json 
-from subprocess import call 
+from subprocess import * 
+import time
 
 # define fpath 
 #i.e. fpath[0] will be the first filepath... 
@@ -22,5 +23,6 @@ for subdir, dirs, files in os.walk(rootdir):
             count=0 # count default
             filepath.append(os.path.join(subdir, file))
             fpath = filepath[count]
-            call["python", "plotrdm.py"]
+            Popen('plotrdm.py')
+            time.sleep(1)
             count +=1      
