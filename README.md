@@ -16,4 +16,4 @@ source venv/bin/activate
 ipython 
 ```
 - The data are presumed to be at ~/Projects/AVIMA/
-- install dependencies: pip install -r requirements.txt
+- Install dependencies: pip install -r requirements.txt
