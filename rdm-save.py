@@ -11,7 +11,6 @@ import json
 from subprocess import call 
 
 # define fpath 
-count=0 # count default
 #i.e. fpath[0] will be the first filepath... 
 
 path = '/home/taran/projects/AVIMA' 
@@ -20,6 +19,7 @@ filepath = []
 for subdir, dirs, files in os.walk(rootdir):
     for file in files:
         if file.startswith('Meadows'):
+            count=0 # count default
             filepath.append(os.path.join(subdir, file))
             fpath = filepath[count]
             call["python", "plotrdm.py"]
