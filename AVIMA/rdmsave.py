@@ -22,7 +22,5 @@ for subdir, dirs, files in os.walk(rootdir):
             count=0 # count default
             filepath.append(os.path.join(subdir, file))
             fpath = filepath[count]
-            f = open('plotrdm.py', 'r')
-            from plotrdm import plot_rdm
-            plot_rdm(fpath)
-            count +=1      
+            os.system("/home/taran/RDM_researchproject/AVIMA/plotrdm.py")
+            count +=1  
