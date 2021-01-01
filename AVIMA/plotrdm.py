@@ -32,15 +32,14 @@ def plot_rdm(fpath, output_filename):
 
     # label x and y axis on rdm
     fig, ax = plt.subplots()
-    rdm = ax.imshow(srdm)
 
     ax.set_xticks(np.arange(len(x_names)))
     ax.set_yticks(np.arange(len(y_names)))
 
     ax.set_xticklabels(x_names, fontsize = 5)
-    ax.set_yticklabels(y_names[::-1], fontsize = 5)
-    plt.setp(ax.get_xticklabels(), rotation=90, ha="right", rotation_mode="anchor")
-    plt.plot(srdm)
+    ax.set_yticklabels(y_names[::-1], fontsize = 5)  
+    plt.setp(ax.get_xticklabels(), rotation=90, ha="right")
+   
     plt.imshow(srdm)
     plt.colorbar(mappable=None, cax=None, ax=None)
     fig.subplots_adjust(bottom=0.23)
