@@ -38,8 +38,7 @@ def plot_rdm(fpath, output_filename):
     ax.set_yticks(np.arange(len(y_names)))
 
     ax.set_xticklabels(x_names, fontsize = 5)
-    ax.set_yticklabels(y_names, fontsize = 5)
-    ax.set_yticklabels(y_names[::-1])
+    ax.set_yticklabels(y_names[::-1], fontsize = 5)
     plt.setp(ax.get_xticklabels(), rotation=90, ha="right", rotation_mode="anchor")
     plt.plot(srdm)
     plt.imshow(srdm)
