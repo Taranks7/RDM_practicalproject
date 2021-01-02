@@ -1,7 +1,7 @@
 # Representational similarity analysis (RSA) (Master's Research Project 2020-21): Project Overview #
 - create representational dissimilarity matrix (RDM) for participants using pairs of stimuli, reflecting Euclidean distances between stimuli
 -  rsa characterizes the representation of stimuli in an individual's brain or a computational model 
-![rdm_plot](https://user-images.githubusercontent.com/74196907/103173524-8e311980-4853-11eb-991a-addce9202bbf.png) 
+[rdm_1.pdf](https://github.com/Taranks7/RDM_researchproject/files/5760370/rdm_1.pdf)
 
 Figure 1. RDM for participant 1; 0 represents most similar pairs of stimuli and 0.05 represents least similar pairs. 
 ## Set up ## 
