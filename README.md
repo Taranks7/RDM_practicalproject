@@ -8,7 +8,7 @@ Figure 1. RDM for participant 1; 0 represents most similar pairs of stimuli and 
 **Setting up the environment:**
 
 ```
-cd projects/AVIMA
+cd RDM_researchproject/AVIMA
 # CREATE VIRTUAL ENVIRONMENT
 # virtualenv venv -p python3
 source venv/bin/activate
