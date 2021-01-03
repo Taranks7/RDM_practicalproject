@@ -86,6 +86,7 @@ def calc_dissim(fpath, output_filename):
     ax.set_yticklabels(y_names[::-1], fontsize = 5)  
     plt.setp(ax.get_xticklabels(), rotation=90, ha="right")
     plt.imshow(euc_dist)
+    plt.clim(0, 1)
     plt.colorbar(mappable=None, cax=None, ax=None)
     fig.subplots_adjust(bottom=0.23)
     
