@@ -6,7 +6,7 @@ basedir = "."
 
 if __name__ == "__main__":
     count = 0
-    for count, path in enumerate(glob.glob(f'{basedir}/**/Meadow*.json', recursive=True)):
+    for count, path in enumerate(sorted(glob.glob(f'{basedir}/**/Meadow*.json', recursive=True))):
         print(f"processing {path}")
         count +=1
         output_image = f'rdm_{count:01}.pdf'
