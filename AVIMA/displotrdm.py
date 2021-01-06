@@ -11,7 +11,7 @@ def calc_dissim(fpath, output_filename):
     #the last will be T132
     #each trial has 50 items, each with x and y coordinates 
 
-    T0 = data['trials'][0]
+    T0 = DT[0]
     dir(T0)
     type(T0)
     T0.keys()
@@ -20,20 +20,7 @@ def calc_dissim(fpath, output_filename):
 
     TP0 = T0['positions']
 
-    #assign x and y variables 
-    for i in TP0:
-        X = (i['x'])
-        ax = abs(X)
-
-    for i in TP0:
-        Y = (i['y'])
-        ay = abs(Y)
-
-    #dissimilarity  
-    for i in TP0:
-        answer = (i['x']-i['y'])
-        D = (abs(answer))
-        
+    #assign x and y variables       
     import numpy as np
     #create y array 
     ly = []
@@ -54,14 +41,13 @@ def calc_dissim(fpath, output_filename):
     arry.reshape((1,-1))
 
     #euclidean distance between arrx arry points 
-    def calc_euc(arrx, arry):
-        return np.array([[np.linalg.norm(i-j) for j in arry] for i in arrx])
+    import scipy
+    import scipy.spatial.distance as sd
+    euc_dist = sd.cdist(arrx, arry, metric='euclidean')
     
-    euc_dist = (calc_euc(arrx, arry))
     #plt.plot((euc_dist.reshape(2500,).T))
     
-    import matplotlib.pyplot as plt
-        #need to make euc_dist an array with (2500/2 - diagonal)  
+    #need to make euc_dist an array with (2500/2 - diagonal)  
     euc_dist = euc_dist + euc_dist.T - np.diag(np.diag(euc_dist))
     
     stim = data['stimuli']
@@ -75,6 +61,7 @@ def calc_dissim(fpath, output_filename):
         x_names.append(i['name'])
     
     import numpy as np
+    import matplotlib.pyplot as plt
     
     fig, ax = plt.subplots()
     ax.set_xticks(np.arange(len(x_names)))
