@@ -50,11 +50,8 @@ def calc_dissim(fpath, output_filename):
         arrx = np.array(lx)
 
     #50x1
-    arrx.reshape((25,2))
-    arry.reshape((25,2))
-
-    arrx = abs(arrx)
-    arry = abs(arry)
+    arrx.reshape((1,-1))
+    arry.reshape((1,-1))
 
     #euclidean distance between arrx arry points 
     def calc_euc(arrx, arry):
