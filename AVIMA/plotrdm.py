@@ -9,7 +9,6 @@ from scipy.spatial.distance import squareform
 import json
 import matplotlib.pyplot as plt
 
-
 def plot_rdm(fpath, output_filename):
     with open(fpath) as fhandle:
         data = json.load(fhandle)
@@ -43,4 +42,7 @@ def plot_rdm(fpath, output_filename):
     plt.imshow(srdm)
     plt.colorbar(mappable=None, cax=None, ax=None)
     fig.subplots_adjust(bottom=0.23)
+    fig.suptitle('Representational Dissimilarity Matrix')
+    plt.xlabel('Audio-visual stimuli')
+    plt.ylabel('Audio-visial stimuli')
     plt.savefig(output_filename, bbox_inches='tight')
