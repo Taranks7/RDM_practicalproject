@@ -45,20 +45,20 @@ def calc_dissim(fpath, output_filename):
         Y = (abs(i['y']))
         ly.append(Y)
         arry = np.array(ly)
-
+    
     #x array
     lx = []
     for i in TP0:
         X = (abs(i['x']))
         lx.append(X)
         arrx = np.array(lx)
-
-	arrx = arrx.reshape((50,1))
-    arry = arry.reshape((50,1))
-    
+	
     #scale of colourbar  
-    arrx = arrx/25
-    arry = arry/25
+    arrx = arrx/20
+    arry = arry/20
+    
+    arrx = arrx.reshape((50,1))
+    arry = arry.reshape((50,1))
     
     #euclidean distance between arrx arry points 
     euc_dist = sd.cdist(arrx, arry, metric='euclidean') 
@@ -67,10 +67,13 @@ def calc_dissim(fpath, output_filename):
         #return np.array([[np.linalg.norm(i-j) for j in arry] for i in arrx])
     #euc_dist = (calc_euc(arrx, arry))
     
+   
     #plt.plot((euc_dist.reshape(2500,).T))
     
         #need to make euc_dist an array with (2500/2 - diagonal)  
     euc_dist = euc_dist + euc_dist.T - np.diag(np.diag(euc_dist))
+    
+    np.fill_diagonal(euc_dist,0, wrap=False)
     
     stim = data['stimuli']
 
@@ -93,9 +96,10 @@ def calc_dissim(fpath, output_filename):
     plt.setp(ax.get_xticklabels(), rotation=90, ha="right")
    
     plt.imshow(euc_dist)
-    fig.suptitle('Representational Dissimilarity Matrix')
-    plt.xlabel('Audio-visual stimuli')
-    plt.ylabel('Audio-visial stimuli')
+    fig.suptitle('Representational Dissimilarity Matrix of pairs of audio-visual stimuli')
+    plt.xlabel('Second element of Audio-visual stimuli pair')
+    plt.ylabel('First element of Audio-visial stimuli pair')
+    plt.clim(0.0, 0.048)
     plt.colorbar(mappable=None, cax=None, ax=None)
     fig.subplots_adjust(bottom=0.23)
     plt.savefig(output_filename, bbox_inches='tight')
