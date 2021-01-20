@@ -53,19 +53,19 @@ def calc_dissim(fpath, output_filename):
         lx.append(X)
         arrx = np.array(lx)
 
-    #scale 
+	arrx = arrx.reshape((50,1))
+    arry = arry.reshape((50,1))
+    
+    #scale of colourbar  
     arrx = arrx/25
     arry = arry/25
     
     #euclidean distance between arrx arry points 
-    #euc_dist = sd.cdist(arrx, arry, metric='euclidean') - this is producing error now? worked previously, whats changed? 
+    euc_dist = sd.cdist(arrx, arry, metric='euclidean') 
     
-    #euclidean distance between arrx arry points 
-    def calc_euc(arrx, arry):
-        return np.array([[np.linalg.norm(i-j) for j in arry] for i in arrx])
-    
-    euc_dist = (calc_euc(arrx, arry))
-    
+    #def calc_euc(arrx, arry):
+        #return np.array([[np.linalg.norm(i-j) for j in arry] for i in arrx])
+    #euc_dist = (calc_euc(arrx, arry))
     
     #plt.plot((euc_dist.reshape(2500,).T))
     
