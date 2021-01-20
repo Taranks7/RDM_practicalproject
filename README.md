@@ -12,7 +12,12 @@ cd RDM_researchproject/AVIMA
 # CREATE VIRTUAL ENVIRONMENT
 # virtualenv venv -p python3
 source venv/bin/activate
-ipython 
 ```
 - The data are presumed to be at ~/RDM_researchproject/AVIMA/
 - Install dependencies: pip install -r requirements.txt
+
+**Run plots**
+```
+python3 rdmsave.py
+python3 disrdmsave.py
+```
