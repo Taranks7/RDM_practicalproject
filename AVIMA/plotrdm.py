@@ -8,7 +8,6 @@ import scipy.spatial.distance as sd
 from scipy.spatial.distance import squareform
 import json
 import matplotlib.pyplot as plt
-
 def plot_rdm(fpath, output_filename):
     with open(fpath) as fhandle:
         data = json.load(fhandle)
@@ -36,7 +35,7 @@ def plot_rdm(fpath, output_filename):
     ax.set_yticks(np.arange(len(y_names)))
 
     ax.set_xticklabels(x_names, fontsize = 5)
-    ax.set_yticklabels(y_names[::-1], fontsize = 5)  
+    ax.set_yticklabels(y_names, fontsize = 5)  
     plt.setp(ax.get_xticklabels(), rotation=90, ha="right")
    
     plt.imshow(srdm)
