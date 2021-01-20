@@ -54,8 +54,8 @@ def calc_dissim(fpath, output_filename):
         arrx = np.array(lx)
 
     #scale 
-    arrx = arrx/20
-    arry = arry/20
+    arrx = arrx/25
+    arry = arry/25
     
     #euclidean distance between arrx arry points 
     #euc_dist = sd.cdist(arrx, arry, metric='euclidean') - this is producing error now? worked previously, whats changed? 
