@@ -47,6 +47,22 @@ def plot_rdm(fpath, output_filename):
     plt.savefig(output_filename, bbox_inches='tight')
     
     # create table 
+def calc_dis(fpath, output_filename):
+    with open(fpath) as fhandle:
+        data = json.load(fhandle)
+
+    stim = data['stimuli']
+    rdm_array = np.array(data['rdm'])
+    srdm = squareform(rdm_array)
+
+    x_names = []
+    for i in stim:
+        x_names.append(i['name'])
+    
+    import pandas as pd
+    DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
+    DF.to_csv(output_filename)
+    
 def calc_sim(fpath, output_filename):
     with open(fpath) as fhandle:
         data = json.load(fhandle)
@@ -61,11 +77,10 @@ def calc_sim(fpath, output_filename):
     
     import pandas as pd
     DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
-    DF.to_csv("dissimilarity.csv")
     
     #select columns from 0 to 0.01
     SDF = DF[(DF>0) & (DF<0.01)]
-    DF.to_csv("similarity.csv")
+    DF.to_csv(output_filename)
         
     DF = pd.DataFrame(x_names)
     DF.to_csv("stimuli.csv")
