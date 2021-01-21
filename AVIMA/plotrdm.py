@@ -42,6 +42,29 @@ def plot_rdm(fpath, output_filename):
     plt.colorbar(mappable=None, cax=None, ax=None)
     fig.subplots_adjust(bottom=0.23)
     fig.suptitle('Representational Dissimilarity Matrix of pairs of audio-visual stimuli')
-    plt.xlabel('Second element of Audio-visual stimuli pair')
-    plt.ylabel('First element of Audio-visial stimuli pair')
+    plt.xlabel('Second element of audio-visual stimuli pair')
+    plt.ylabel('First element of audio-visial stimuli pair')
     plt.savefig(output_filename, bbox_inches='tight')
+    
+    # create table 
+def calc_sim(fpath, output_filename):
+    with open(fpath) as fhandle:
+        data = json.load(fhandle)
+
+    stim = data['stimuli']
+    rdm_array = np.array(data['rdm'])
+    srdm = squareform(rdm_array)
+
+    x_names = []
+    for i in stim:
+        x_names.append(i['name'])
+    
+    import pandas as pd
+    DF = pd.DataFrame(srdm)
+    DF.to_csv("dissimilarity.csv")
+    
+    DF = pd.DataFrame(x_names)
+    DF.to_csv("stimuli.csv")
+        
+        
+    

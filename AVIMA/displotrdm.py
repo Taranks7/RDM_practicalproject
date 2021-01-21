@@ -97,9 +97,9 @@ def calc_dissim(fpath, output_filename):
    
     plt.imshow(euc_dist)
     fig.suptitle('Representational Dissimilarity Matrix of pairs of audio-visual stimuli')
-    plt.xlabel('Second element of Audio-visual stimuli pair')
-    plt.ylabel('First element of Audio-visial stimuli pair')
-    plt.clim(0.0, 0.048)
+    plt.xlabel('Second element of audio-visual stimuli pair')
+    plt.ylabel('First element of audio-visial stimuli pair')
+    plt.clim(0.0, 0.05)
     plt.colorbar(mappable=None, cax=None, ax=None)
     fig.subplots_adjust(bottom=0.23)
     plt.savefig(output_filename, bbox_inches='tight')
