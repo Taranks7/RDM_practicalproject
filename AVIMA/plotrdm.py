@@ -63,6 +63,10 @@ def calc_sim(fpath, output_filename):
     DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
     DF.to_csv("dissimilarity.csv")
     
+    #select columns from 0 to 0.01
+    SDF = DF[(DF>0) & (DF<0.01)]
+    DF.to_csv("similarity.csv")
+        
     DF = pd.DataFrame(x_names)
     DF.to_csv("stimuli.csv")
         
