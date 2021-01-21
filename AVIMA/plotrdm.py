@@ -60,7 +60,7 @@ def calc_sim(fpath, output_filename):
         x_names.append(i['name'])
     
     import pandas as pd
-    DF = pd.DataFrame(srdm)
+    DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
     DF.to_csv("dissimilarity.csv")
     
     DF = pd.DataFrame(x_names)
