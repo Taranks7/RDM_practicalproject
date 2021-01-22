@@ -36,13 +36,25 @@ if __name__ == "__main__":
         corr(path, output_image)
     print(f"processed {count} files")
     
-from plotrdm import str_corr    
+from plotrdm import pos_corr    
 if __name__ == "__main__":
     count = 0
     for count, path in enumerate(sorted(glob.glob(f'{basedir}/**/Meadow*.json', recursive=True))):
         print(f"processing {path}")
         count +=1
-        output_image = f'strong_correlation_table{count:01}.csv'
+        output_image = f'postive_correlation_table{count:01}.csv'
+        print(f"output image will be {output_image}")
+        corr(path, output_image)
+    print(f"processed {count} files")
+    
+    
+from plotrdm import neg_corr    
+if __name__ == "__main__":
+    count = 0
+    for count, path in enumerate(sorted(glob.glob(f'{basedir}/**/Meadow*.json', recursive=True))):
+        print(f"processing {path}")
+        count +=1
+        output_image = f'negative_correlation_table{count:01}.csv'
         print(f"output image will be {output_image}")
         corr(path, output_image)
     print(f"processed {count} files")
