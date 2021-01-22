@@ -117,5 +117,6 @@ def str_corr(fpath, output_filename):
     import pandas as pd
     DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
     CDF = DF.corr()
-    STRDF = CDF[(CDF>=0.8) & (CDF<=-0.8)]
+    STRDF = CDF[(CDF>=0.8) & (CDF>=-0.8)]
+    
     STRDF.to_csv(output_filename)     
