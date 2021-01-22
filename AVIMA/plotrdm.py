@@ -46,7 +46,7 @@ def plot_rdm(fpath, output_filename):
     plt.ylabel('First element of audio-visial stimuli pair')
     plt.savefig(output_filename, bbox_inches='tight')
     
-    # create table 
+    # create tables
 def calc_dis(fpath, output_filename):
     with open(fpath) as fhandle:
         data = json.load(fhandle)
@@ -101,4 +101,21 @@ def corr(fpath, output_filename):
     DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
     CDF = DF.corr()
     CDF.to_csv(output_filename)      
+
+def str_corr(fpath, output_filename):
+    with open(fpath) as fhandle:
+        data = json.load(fhandle)
+
+    stim = data['stimuli']
+    rdm_array = np.array(data['rdm'])
+    srdm = squareform(rdm_array)
+
+    x_names = []
+    for i in stim:
+        x_names.append(i['name'])
     
+    import pandas as pd
+    DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
+    CDF = DF.corr()
+    STRDF = CDF[(CDF>=0.8) & (CDF<=-0.8)]
+    STRDF.to_csv(output_filename)     
