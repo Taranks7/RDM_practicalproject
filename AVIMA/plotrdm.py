@@ -79,11 +79,26 @@ def calc_sim(fpath, output_filename):
     DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
     
     #select columns from 0 to 0.01
-    SDF = DF[(DF>0) & (DF<0.01)]
-    DF.to_csv(output_filename)
+    SDF = DF[(DF>-1) & (DF<0.01)]
+    SDF.to_csv(output_filename)
         
     DF = pd.DataFrame(x_names)
     DF.to_csv("stimuli.csv")
         
-        
+def corr(fpath, output_filename):
+    with open(fpath) as fhandle:
+        data = json.load(fhandle)
+
+    stim = data['stimuli']
+    rdm_array = np.array(data['rdm'])
+    srdm = squareform(rdm_array)
+
+    x_names = []
+    for i in stim:
+        x_names.append(i['name'])
+    
+    import pandas as pd
+    DF = pd.DataFrame(srdm, columns = [x_names], index = [x_names])
+    CDF = DF.corr()
+    CDF.to_csv(output_filename)      
     
