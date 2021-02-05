@@ -1,7 +1,7 @@
-# Representational similarity analysis (RSA) #
-# Master's Research Project 2020-21: Project Overview #
-- rsa characterizes the representation of stimuli in an individual's brain or a computational model 
-- created representational dissimilarity matrix (RDM) for participants using pairs of visual stimuli, reflecting percieved similairy between the stimuli
+# Representational similarity analysis (RSA) of pairs of visual stimuli. Master's Practical Project 2020-21: Project Overview #
+- RSA characterizes the representation of stimuli in an individual's brain or a computational model 
+- In this project, i created a representational dissimilarity matrix (RDM) for participants using pairs of visual stimuli, reflecting percieved similairy between the stimuli
+- Calculated the Pearson's correlation coefficient between pairs of stimuli to quantify the level of dissimilarity 
 
 ![rdm_plot](https://user-images.githubusercontent.com/74196907/105768107-ce1f1580-5f53-11eb-84d7-8567bfd7fcb6.png)
 
