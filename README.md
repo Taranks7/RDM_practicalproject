@@ -1,4 +1,5 @@
-# Representational similarity analysis (RSA) (Master's Research Project 2020-21): Project Overview #
+# Representational similarity analysis (RSA) #
+# Master's Research Project 2020-21: Project Overview #
 - rsa characterizes the representation of stimuli in an individual's brain or a computational model 
 - created representational dissimilarity matrix (RDM) for participants using pairs of visual stimuli, reflecting percieved similairy between the stimuli
 
