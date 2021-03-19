@@ -10,7 +10,7 @@ Figure 1. RDM for participant 1; 0 represents similar pair of stimuli and 0.05 r
 **Setting up the environment:**
 
 ```
-cd RDM_practialproject/AVIMA
+cd RDM_practicalproject/AVIMA
 # CREATE VIRTUAL ENVIRONMENT
 # virtualenv venv -p python3
 source venv/bin/activate
