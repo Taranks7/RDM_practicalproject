@@ -18,8 +18,10 @@ source venv/bin/activate
 - The data are presumed to be at ~/RDM_practicalproject/AVIMA/
 - Install dependencies: pip install -r requirements.txt
 
-**Run plots**
+**Run**
 ```
+python3 plotrdm.py
+python3 displotrdm.py
 python3 rdmsave.py
 python3 disrdmsave.py
 ```
